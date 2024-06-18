@@ -98,7 +98,7 @@ section h2{
   margin: auto; /*吹き出しを中央に位置*/
   margin-top: 2rem; /*上の余白*/
   display: flex;
-  justify-content: center;
+  justify-content: center; /*並列の左右方向の中央寄せ*/
   position: relative;
   max-width: 300px;
   margin-bottom: 15px; /*下の余白*/
@@ -117,6 +117,28 @@ section h2{
   clip-path: polygon(0 0, 100% 0, 50% 100%);
   content: '';
 }
+
+/*.balloon {
+    display: flex;
+    align-items: center;
+    position: relative;
+    max-width: 300px;
+    margin-left: 15px;
+    padding: .8em 1.2em;
+    border-radius: 5px;
+    background-color: #f7dafb;
+    color: #3d3d3d;
+}
+
+.balloon::before {
+    position: absolute;
+    left: -15px;
+    width: 15px;
+    height: 30px;
+    background-color: #f7dafb;
+    clip-path: polygon(0 50%, 100% 0, 100% 100%);
+    content: '';
+}*/
 
 #about{
   height: 750px;
@@ -174,19 +196,19 @@ button {
 
   /* 整える */
   margin: 1em 0; /* 前後の隙間 */
-  padding: 0.6em 1em; /* 塗りの余白 */
+  padding: 1em 2em; /* 塗りの余白 */
   font-size: 1em; /* フォントサイズ */
-  background-color: #1aa1ff; /* 背景色 */
+  background-color: #fd6a0e; /* 背景色 */
   color: #FFF; /* テキストカラー */
   cursor: pointer; /* カーソルを指マークに */
-  border-radius: 3px; /* 角の丸み */
+  border-radius: 5px; /* 角の丸み */
   border: 0; /* 枠線を消す */
   transition: 0.3s; /* ホバーの変化を滑らかに */
 }
 
 /* ホバー時（カーソルをのせた時）の見た目 */
 button:hover {
-  background-color: #064fda; /* 背景色 */
+  background-color: #fab82a; /* 背景色 */
 }
 
 .container{
@@ -212,6 +234,47 @@ button:hover {
 
 #schedule img{
   width: 800px;
+}
+
+#Reviews h2{
+  margin-bottom: 2rem;
+}
+
+.balloon-002 {
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 10px;
+  justify-content: left;
+  align-items: start;
+  gap: 0 22px;
+}
+
+.balloon-002 img {
+  max-width: 70px;
+  height: 100%;
+  border: 3px solid #d6d6d6;
+  border-radius: 50%;
+}
+
+.balloon-002 p {
+  position: relative;
+  max-width: 300px;
+  margin: 3px 0 0;
+  padding: .8em 1em;
+  border-radius: 5px;
+  background-color: #d6efff;
+  color: #333333;
+}
+
+.balloon-002 p::before {
+  position: absolute;
+  left: -15px;
+  width: 15px;
+  height: 30px;
+  background-color: #d6efff;
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+  content: '';
 }
 
 #links{
