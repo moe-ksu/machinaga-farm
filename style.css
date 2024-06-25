@@ -5,6 +5,25 @@
   text-decoration: none;
 }
 
+.m-plus-rounded-1c-regular {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.m-plus-rounded-1c-medium {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.m-plus-rounded-1c-bold {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
 header{
   position: fixed;
   top: 0; /*上はじから*/
@@ -12,14 +31,29 @@ header{
   width: 100%; /*サイズ*/
   min-width: 600px;
   padding: 20px; /*枠のサイズ*/
-  background-color:transparent; /*背景の色：透明*/
+  background-color:rgba(255, 245, 232, 0.7); /*背景の色：透明*/
   color: #ff8f34; /*フォントの色*/
   display: flex;
   flex-direction: row;
 }
 
-header h1{
+h1{
   margin-right: auto;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+h2{
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+p,a,div{
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 nav {
@@ -27,7 +61,7 @@ nav {
 }
 
 nav ul {
-  display: flex;
+  display: flex; /*横並びにする*/
   flex-direction: row;
   justify-content: space-between;
   margin-right: 2.5rem;
@@ -42,7 +76,7 @@ nav a{
 }
 
 #wrapper {
-margin-top: 160px;
+margin-top: 100px;
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
@@ -52,26 +86,92 @@ margin-top: 160px;
 
 #mainVisual{
   text-align: center;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 #mainVisual img{
   width:30%;
 }
 
-#home2{
-  text-align: center;
-  /*margin-top: 1rem;*/
-  margin-bottom: 3rem;
+.balloon1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 90px;
+  height: 100px;
+  margin: 30px 30% 0 70%;
+  color: rgb(20,20,20);/* バルーン内テキスト色 */
+  box-shadow: 12px 10px 15px -10px rgb(0,0,0,.2);
+  border-radius: 100%;
+  background: rgb(231,172,178);
+  font-weight: bold;
+  font-size: 16px;/* バルーン内テキスト大きさ */
+  transform: rotate(-6deg);
+}
+.balloon1::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: 0;
+  width: 1px;
+  height: 20px;
+  margin: auto;
+  background: black;
+}
+.balloon1::after {
+  content: "";
+  position: absolute;
+  bottom: -7px;
+  left: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  margin: auto;
+  border-style: solid;
+  border-width: 0 10px 20px 10px;
+  border-color: transparent transparent rgb(231,172,178) transparent;/* rgb(231,172,178)はバルーン背景色と同じ色 */
+  border-radius: 4px;
 }
 
+#home{
+  position:relative
+  
+}
+#home h1{
+  position: absolute;/*重ねたい子要素にabsolute*/
+  top:40%;
+  left: 50%;
+  transform: translate(-50%,-50%);/*センター寄せの修正*/
+  color: #fff;
+  font-size: 500%;
+  /*margin: 0!important;/*文字がずれている場合や*/
+  /*padding: 0!important;/*文字が折り返される場合*/
+}
+
+#home h2{
+  position: absolute;/*重ねたい子要素にabsolute*/
+  top:70%;
+  left: 50%;
+  transform: translate(-50%,-50%);/*センター寄せの修正*/
+  color: #fff;
+  font-size: 250%;
+  /*margin: 0!important;/*文字がずれている場合や*/
+  /*padding: 0!important;/*文字が折り返される場合*/
+}
 #home img{
   width: 100%;
 }
 
+#home2{
+  text-align: center;
+  background-color: #fcf9f5;
+}
+
 #home2 img{
-  width:50%;
+  width: 40%;
 }
 
 section {
@@ -94,10 +194,10 @@ section h2{
   margin-bottom: 1rem;
 }
 
-.balloon {
+.balloon2 {
   margin: auto; /*吹き出しを中央に位置*/
   margin-top: 2rem; /*上の余白*/
-  display: flex;
+  display: flex; /*flexでレイアウト*/
   justify-content: center; /*並列の左右方向の中央寄せ*/
   position: relative;
   max-width: 300px;
@@ -108,7 +208,7 @@ section h2{
   color: #3d3d3d; /*吹き出しのテキストカラー*/
 }
 
-.balloon::before {
+.balloon2::before {
   position: absolute;
   bottom: -15px;
   width: 30px;
@@ -118,30 +218,9 @@ section h2{
   content: '';
 }
 
-/*.balloon {
-    display: flex;
-    align-items: center;
-    position: relative;
-    max-width: 300px;
-    margin-left: 15px;
-    padding: .8em 1.2em;
-    border-radius: 5px;
-    background-color: #f7dafb;
-    color: #3d3d3d;
-}
-
-.balloon::before {
-    position: absolute;
-    left: -15px;
-    width: 15px;
-    height: 30px;
-    background-color: #f7dafb;
-    clip-path: polygon(0 50%, 100% 0, 100% 100%);
-    content: '';
-}*/
-
 #about{
   height: 750px;
+  background-color: #fcf9f5;
 }
 
 #about p{
@@ -166,6 +245,7 @@ section h2{
 
 .picture img{
   width: 100%;
+  border-radius: 10px;
 }
 
 .description{
@@ -187,6 +267,36 @@ section h2{
   text-align: center;
 }
 
+.item{
+  overflow: hidden;
+  position: relative;
+}
+
+.item img{
+  border-radius: 5px; /*角を丸くする*/
+}
+.item .caption { /*文字設定*/
+	font-size:		100%;
+	color:			#fff;
+  text-align: center;
+	padding-top:		15px;
+	/*padding-left:		0px;*/
+}
+.item .mask {
+	width:			84%; /*マスクの幅*/
+	height:			75%; /*マスクの高さ*/
+	position:		absolute;
+	top:			20px;
+	left:			20px;
+	opacity:		0;	/* マスクを表示しない */
+	background-color:	rgba(0,0,0,0.4);
+  border-radius: 5px; /*角を丸くする*/
+	/*-webkit-*/transition:	all 0.6s ease; /*時間経過による変化（プロパティ　秒数　変化のさせ方*/
+}
+.item:hover .mask {
+	opacity:		1;	/* マスクを表示する */
+	padding-top:		10px;	/* 右にずらす */
+}
 
 button {
   /* ブラウザ特有のスタイルを無効に */
@@ -228,53 +338,76 @@ button:hover {
   width: 100%;
 }
 
+#schedule{
+  background-color: #fcf9f5;
+}
+
 #schedule p{
   text-align: center;
 }
 
 #schedule img{
-  width: 800px;
+  width: 70%;
 }
 
-#Reviews h2{
+#reviews{
+  height: 700px;
+  background-color: #fbf6ea;
+}
+
+#reviews h2{
   margin-bottom: 2rem;
 }
 
-.balloon-002 {
+.balloon-all{
   display: flex;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 10px;
-  justify-content: left;
-  align-items: start;
-  gap: 0 22px;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: auto;
 }
 
-.balloon-002 img {
-  max-width: 70px;
-  height: 100%;
-  border: 3px solid #d6d6d6;
-  border-radius: 50%;
-}
-
-.balloon-002 p {
+/* 吹き出し本体 */
+.balloon3{
   position: relative;
-  max-width: 300px;
-  margin: 3px 0 0;
-  padding: .8em 1em;
-  border-radius: 5px;
-  background-color: #d6efff;
-  color: #333333;
+  padding: 20px;
+  background-color: #c4feb5;
+  border-radius: 10px;
+  box-shadow: 6px 6px 0px 0px #66c564; /* 吹き出し本体の影 */
+  margin-bottom: 2rem;
+}
+/* 三角アイコン */
+.balloon3::before{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: 27px;
+  bottom: -18px;
+  border-top: 15px solid #66c564;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+}
+/* 三角アイコンの影 */
+.balloon3::after{
+  content: '';
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  left: 20px;
+  bottom: -15px;
+  border-top: 15px solid #bdffad;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
 }
 
-.balloon-002 p::before {
-  position: absolute;
-  left: -15px;
-  width: 15px;
-  height: 30px;
-  background-color: #d6efff;
-  clip-path: polygon(0 50%, 100% 0, 100% 100%);
-  content: '';
+#instagram{
+  background-color: #fcf9f5;
+}
+
+#instagram h2{
+  margin-bottom: 2rem;
 }
 
 #links{
@@ -338,7 +471,21 @@ button:hover {
 }
 
 footer{
-  padding: 100px;
-  background-color: #ffffff;
+  padding: 30px; /*枠のサイズ*/
+  background-color: #fdf3e0;
   color: #000;
+}
+
+#footer01{
+  display: flex;
+  justify-content: center;
+}
+
+#kazoku{
+  text-align: center;
+}
+
+#kazoku h2{
+  margin-top: 10rem;
+  margin-bottom: 2rem;
 }
