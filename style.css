@@ -29,12 +29,19 @@ header{
   top: 0; /*上はじから*/
   left: 0; /*左端から*/
   width: 100%; /*サイズ*/
-  min-width: 600px;
-  padding: 20px; /*枠のサイズ*/
-  background-color:rgba(255, 245, 232, 0.7); /*背景の色：透明*/
+  min-width: 5vh;
+  padding: 1vw; /*枠のサイズ*/
+  background-color:rgba(255, 245, 232, 0.7); /*背景の色*/
   color: #ff8f34; /*フォントの色*/
   display: flex;
   flex-direction: row;
+  z-index: 999;
+}
+header h1{
+  font-size: 2.5vw;
+}
+header a{
+  font-size: 1.2vw;
 }
 
 h1{
@@ -52,8 +59,6 @@ h2{
 
 p,a,div{
   font-family: "M PLUS Rounded 1c", sans-serif;
-  font-weight: 400;
-  font-style: normal;
 }
 
 nav {
@@ -76,7 +81,7 @@ nav a{
 }
 
 #wrapper {
-margin-top: 100px;
+  margin-top: 8vw;
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
@@ -85,22 +90,24 @@ margin-top: 100px;
 }
 
 #mainVisual{
+  position: relative;
   text-align: center;
   margin-bottom: 1rem;
 }
-
 #mainVisual img{
-  width:30%;
+  width:25%;
+  margin-bottom: 2rem;
 }
 
 .balloon1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  width: 90px;
-  height: 100px;
-  margin: 30px 30% 0 70%;
+  position: absolute;
+  width: 120px;
+  height: 130px;
+  top: 150px;
+  right: 250px;
   color: rgb(20,20,20);/* バルーン内テキスト色 */
   box-shadow: 12px 10px 15px -10px rgb(0,0,0,.2);
   border-radius: 100%;
@@ -117,7 +124,7 @@ margin-top: 100px;
   right: 0;
   left: 0;
   width: 1px;
-  height: 20px;
+  height: 30px;
   margin: auto;
   background: black;
 }
@@ -137,27 +144,27 @@ margin-top: 100px;
 }
 
 #home{
-  position:relative
+  position:relative;
   
 }
 #home h1{
   position: absolute;/*重ねたい子要素にabsolute*/
-  top:40%;
+  top:5em;
   left: 50%;
   transform: translate(-50%,-50%);/*センター寄せの修正*/
   color: #fff;
-  font-size: 500%;
+  font-size: 6.2vw;
   /*margin: 0!important;/*文字がずれている場合や*/
   /*padding: 0!important;/*文字が折り返される場合*/
 }
 
 #home h2{
   position: absolute;/*重ねたい子要素にabsolute*/
-  top:70%;
+  top: 14.5em;
   left: 50%;
   transform: translate(-50%,-50%);/*センター寄せの修正*/
   color: #fff;
-  font-size: 250%;
+  font-size: 3.3vw;
   /*margin: 0!important;/*文字がずれている場合や*/
   /*padding: 0!important;/*文字が折り返される場合*/
 }
@@ -166,12 +173,22 @@ margin-top: 100px;
 }
 
 #home2{
-  text-align: center;
   background-color: #fcf9f5;
+  text-align: center;
+}
+
+#home2 p{
+  writing-mode: vertical-rl;
+  display: inline-block;
+  height: 400px;
+  text-align: left;
+  font-size: 20px;
+  margin-top: 2rem;
 }
 
 #home2 img{
-  width: 40%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 section {
@@ -219,7 +236,7 @@ section h2{
 }
 
 #about{
-  height: 750px;
+  height: 850px;
   background-color: #fcf9f5;
 }
 
@@ -256,9 +273,30 @@ section h2{
   box-sizing: border-box;
 }
 
-.description p{
-  font-size: 13px;
-  color: dimgray;
+.number{
+  font-size: large;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.number::before{
+  content:attr(data-number);
+  display: inline-block;
+  margin-right: 10px;
+  color: #498ee0;
+  border-bottom: 1px solid #498ee0;
+}
+
+.episode{
+  text-align: center;
+}
+
+.waku{
+  background: #fee9ee; 
+  box-shadow: #fceff2 0 0 10px 10px; 
+  margin-top:20px; 
+  font-size: 80%; 
+  padding: 5px 5px 5px 8px;
 }
 
 #kudamono{
@@ -410,17 +448,31 @@ button:hover {
   margin-bottom: 2rem;
 }
 
+.insta{
+  display: flex;
+  justify-content: center;
+}
+
+.toukou{
+  width: 25%;
+  border-radius: 5px; /* 角の丸み */
+  margin: 0 10px 10px 10px;
+}
+
 #links{
-  height: 600px;
+  height: 500px;
   text-align: center;
   background: #fdf3e0;
   color: #2f2f2f;
   font-family: 'Open Sans';
 }
+#links h2{
+  margin-bottom: 4rem;
+}
 
 #links form{
   width: 50%;
-  margin: 10% auto;
+  margin: 10px auto;
   min-width: 9rem;
 }
 
@@ -433,7 +485,7 @@ button:hover {
   padding: 0.5rem 1rem;
   border-radius: 0.3rem;
   background: darken(#f9f9f9,10%);
-  color:darken(#f9f9f9,50%)
+  color:darken(#f9f9f9,50%);
 
   &[type=submit] {
     background: #84AD47;
@@ -476,11 +528,16 @@ footer{
   color: #000;
 }
 
-#footer01{
+.footer01{
   display: flex;
   justify-content: center;
 }
+.item2{
+  padding: 0 20px;
 
+}
+
+/*家族の紹介ページ*/
 #kazoku{
   text-align: center;
 }
@@ -488,4 +545,78 @@ footer{
 #kazoku h2{
   margin-top: 10rem;
   margin-bottom: 2rem;
+}
+
+#kazoku2{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 50px 200px;
+
+}
+
+.heading03 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 26px;
+	text-align: center;
+}
+
+.heading03::before,
+.heading03::after {
+	content: '';
+	width: 70px;
+	height: 3px;
+	background-color: #f9bcd6;
+}
+
+.heading03::before {
+	margin-right: 20px;
+}
+.heading03::after {
+	margin-left: 20px;
+}
+
+#kazoku p {
+  margin-bottom: 3rem;
+}
+
+.box {
+  flex: 0 0 30%;
+  box-sizing: border-box; /* ボーダーとパディングを含めて計算 */
+  padding: 10px;
+  margin: 20px 100px;
+  color: #565656;
+  background: #ffeaea;
+  box-shadow: 0px 0px 0px 10px #ffeaea;
+  border: dashed 2px #ffc3c3;
+  border-radius: 8px;
+}
+
+.syoukai{
+  padding: 40px;
+}
+
+.heading {
+	position: relative;
+	padding-top: 20px;
+	padding-left: 10px;
+}
+
+.heading span {
+	position: relative;
+	z-index: 2;
+}
+
+.heading::before {
+	content: attr(data-en);
+	position: absolute;
+	transform: rotate(-5deg);
+	top: -30px;
+	left: -30px;
+	color: rgba(224,66,114,0.6);
+	font-size: 30px;
+	font-weight: 400;
+	font-family: luxus-brut, cursive;
+	font-style: italic;
 }
