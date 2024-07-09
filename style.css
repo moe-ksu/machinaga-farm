@@ -35,7 +35,7 @@ header{
   color: #ff8f34; /*フォントの色*/
   display: flex;
   flex-direction: row;
-  z-index: 999;
+  z-index: 999; /*z座標に対して、位置を一番手前に指定する*/
 }
 header h1{
   font-size: 2.5vw;
@@ -103,11 +103,11 @@ nav a{
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   width: 120px;
   height: 130px;
-  top: 150px;
-  right: 250px;
+  top: 100px;
+  right: 100px;
   color: rgb(20,20,20);/* バルーン内テキスト色 */
   box-shadow: 12px 10px 15px -10px rgb(0,0,0,.2);
   border-radius: 100%;
@@ -115,6 +115,7 @@ nav a{
   font-weight: bold;
   font-size: 16px;/* バルーン内テキスト大きさ */
   transform: rotate(-6deg);
+  z-index: 999; /*z座標に対して、位置を一番手前に指定する*/
 }
 .balloon1::before {
   content: "";
@@ -619,4 +620,26 @@ footer{
 	font-weight: 400;
 	font-family: luxus-brut, cursive;
 	font-style: italic;
+}
+
+@media screen and(max-width:480px) { /*480px以下に適応されるCSS（スマホ用）*/
+  #home2 p{
+    height: 350px;
+    font-size: 10px;
+  }
+  
+  #home2 img{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  #home2 p{
+    font-size: 10px;
+  }
+}
+
+@media screen and(max-width:959px){ /*959px以下に適応されるCSS（タブレット用）*/
+  #home p{
+    font-size: 10px;
+  }
 }
