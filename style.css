@@ -23,7 +23,6 @@
   font-style: normal;
 }
 
-
 header{
   position: fixed;
   top: 0; /*上はじから*/
@@ -103,7 +102,7 @@ nav a{
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: fixed; /*画面上に固定させる*/
   width: 120px;
   height: 130px;
   top: 100px;
@@ -116,6 +115,9 @@ nav a{
   font-size: 16px;/* バルーン内テキスト大きさ */
   transform: rotate(-6deg);
   z-index: 999; /*z座標に対して、位置を一番手前に指定する*/
+  animation: fuwafuwa 3s ease-in-out infinite alternate;
+  /*display: inline-block;*/
+  transition: 1.5s ease-in-out;
 }
 .balloon1::before {
   content: "";
@@ -142,6 +144,17 @@ nav a{
   border-width: 0 10px 20px 10px;
   border-color: transparent transparent rgb(231,172,178) transparent;/* rgb(231,172,178)はバルーン背景色と同じ色 */
   border-radius: 4px;
+}
+@keyframes fuwafuwa {
+  0% {
+    transform:translate(0, 0) rotate(-7deg);
+  }
+  50% {
+    transform:translate(0, -7px) rotate(0deg);
+  }
+  100% {
+    transform:translate(0, 0) rotate(7deg);
+  }
 }
 
 #home{
@@ -236,6 +249,31 @@ section h2{
   content: '';
 }
 
+.gonchan {
+  animation: poyopoyo 2s ease-out infinite;
+  opacity: 1;
+  /*animation: fuwafuwa 1.5s ease-in infinite alternate;*/
+}
+@keyframes poyopoyo {
+  0%, 40%, 60%, 80% {
+    transform: scale(1.0);
+  }
+  50%, 70% {
+    transform: scale(0.97);
+  }
+}
+/*@keyframes fuwafuwa {
+  0% {
+    transform:translate(0, 0) rotate(-2deg);
+  }
+  50% {
+    transform:translate(0, -5px) rotate(0deg);
+  }
+  100% {
+    transform:translate(0, 0) rotate(15deg);
+  }
+}*/
+
 #about{
   height: 850px;
   background-color: #fcf9f5;
@@ -315,19 +353,19 @@ section h2{
   border-radius: 5px; /*角を丸くする*/
 }
 .item .caption { /*文字設定*/
-	font-size:		100%;
-	color:			#fff;
+	font-size: 100%;
+	color: #fff;
   text-align: center;
-	padding-top:		15px;
-	/*padding-left:		0px;*/
+	padding-top: 15px;
+	/*padding-left:	0px;*/
 }
 .item .mask {
-	width:			84%; /*マスクの幅*/
-	height:			75%; /*マスクの高さ*/
-	position:		absolute;
-	top:			20px;
-	left:			20px;
-	opacity:		0;	/* マスクを表示しない */
+	width: 84%; /*マスクの幅*/
+	height: 75%; /*マスクの高さ*/
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	opacity: 0;	/* マスクを表示しない */
 	background-color:	rgba(0,0,0,0.4);
   border-radius: 5px; /*角を丸くする*/
 	/*-webkit-*/transition:	all 0.6s ease; /*時間経過による変化（プロパティ　秒数　変化のさせ方*/
@@ -622,24 +660,66 @@ footer{
 	font-style: italic;
 }
 
-@media screen and(max-width:480px) { /*480px以下に適応されるCSS（スマホ用）*/
+@media screen and (max-width:760px) { /*760px以下に適応されるCSS（スマホ用）*/
+  
+  /*header { 確認テスト
+    background-color: red;
+  }*/
+  
+  .balloon1{
+  width: 100px;
+  height: 110px;
+  top: 50px;
+  right: 50px;
+  }
+
   #home2 p{
     height: 350px;
-    font-size: 10px;
+    font-size: 13px;
   }
   
   #home2 img{
+    width: 60%;
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
 
-  #home2 p{
-    font-size: 10px;
+  #info{
+    height: 1100px;
+  }
+
+  #about{
+    height: 2000px;
+  }
+  #cards{
+    display:flex;
+    flex-flow: column;
+    justify-content: center;
+  }
+  .card{
+    width: 300px;
+    height: 315px;
+  }
+
+  #kudamono{
+    height: 3700px;
+  }
+  .container{
+    display:flex;
+    flex-flow: column;
+  }
+  .item img{
+    width: 70%;
+  }
+
+  #reviews{
+    height: 900px;
+  }
+
+  .insta{
+    flex-flow: column;
   }
 }
 
-@media screen and(max-width:959px){ /*959px以下に適応されるCSS（タブレット用）*/
-  #home p{
-    font-size: 10px;
-  }
+@media screen and (max-width:959px){ /*959px以下に適応されるCSS（タブレット用）*/
 }
