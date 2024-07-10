@@ -217,7 +217,7 @@ section h2{
 #info{
   text-align: center;
   background-color: #fdf3e0;
-  height: 1000px;
+  height: 1020px;
 }
 
 #info img{
@@ -666,30 +666,45 @@ footer{
     background-color: red;
   }*/
   
+  #mainVisual span{
+    font-size: 12px;
+  }
+
   .balloon1{
-  width: 100px;
-  height: 110px;
+  width: 80px;
+  height: 90px;
   top: 50px;
   right: 50px;
   }
 
+  .balloon1::before{
+    height: 25px;
+  }
+
   #home2 p{
-    height: 350px;
-    font-size: 13px;
+    height: 300px;
+    font-size: 12px;
   }
   
   #home2 img{
-    width: 60%;
+    width: 80%;
     margin-top: 2rem;
     margin-bottom: 2rem;
   }
 
   #info{
-    height: 1100px;
+    height: 1200px;
+  }
+  
+  .balloon2{
+    max-width: 200px;
+  }
+  .balloon2 p{
+    font-size: 10px;
   }
 
   #about{
-    height: 2000px;
+    height: 1700px;
   }
   #cards{
     display:flex;
@@ -702,7 +717,7 @@ footer{
   }
 
   #kudamono{
-    height: 3700px;
+    height: 3800px;
   }
   .container{
     display:flex;
@@ -710,6 +725,12 @@ footer{
   }
   .item img{
     width: 70%;
+  }
+  .item .mask {
+    width: 64.5%; /*マスクの幅*/
+    height: 82%; /*マスクの高さ*/
+    top: 5%;
+    left: 18%;
   }
 
   #reviews{
