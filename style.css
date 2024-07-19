@@ -698,7 +698,6 @@ footer{
   
   #info p{
     font-size: 90%;
-    margin: 0 10px;
   }
 
   .balloon2{
@@ -709,8 +708,13 @@ footer{
   }
 
   #about{
-    height: 1700px;
+    height: 2000px;
   }
+
+  #about p{
+    font-size: 90%;
+  }
+
   #cards{
     display:flex;
     flex-flow: column;
