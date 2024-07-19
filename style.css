@@ -449,7 +449,7 @@ button:hover {
   padding: 20px;
   background-color: #c4feb5;
   border-radius: 10px;
-  box-shadow: 6px 6px 0px 0px #66c564; /* 吹き出し本体の影 */
+  box-shadow: 4px 4px 0px 0px #66c564; /* 吹き出し本体の影 */
   margin-bottom: 2rem;
 }
 /* 三角アイコン */
@@ -696,6 +696,11 @@ footer{
     height: 1200px;
   }
   
+  #info p{
+    font-size: 90%;
+    margin: 0 10px;
+  }
+
   .balloon2{
     max-width: 200px;
   }
@@ -712,8 +717,7 @@ footer{
     justify-content: center;
   }
   .card{
-    width: 300px;
-    height: 315px;
+    height: 550px;
   }
 
   #kudamono{
@@ -727,14 +731,21 @@ footer{
     width: 70%;
   }
   .item .mask {
-    width: 64.5%; /*マスクの幅*/
-    height: 82%; /*マスクの高さ*/
-    top: 5%;
-    left: 18%;
+    width: 62%; /*マスクの幅*/
+    /*height: 82%; /*マスクの高さ*/
+    left: 19%;
+  }
+  .caption{
+    font-size: 90%;
   }
 
   #reviews{
-    height: 900px;
+    height: 750px;
+    font-size: small;
+  }
+
+  .balloon3{
+    padding: 10px;
   }
 
   .insta{
