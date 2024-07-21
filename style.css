@@ -662,9 +662,9 @@ footer{
 
 @media screen and (max-width:760px) { /*760px以下に適応されるCSS（スマホ用）*/
   
-  /*header { 確認テスト
-    background-color: red;
-  }*/
+  header {
+    font-size: 10px;
+  }
   
   #mainVisual span{
     font-size: 12px;
@@ -674,7 +674,7 @@ footer{
   width: 80px;
   height: 90px;
   top: 50px;
-  right: 50px;
+  right: 30px;
   }
 
   .balloon1::before{
@@ -725,7 +725,7 @@ footer{
   }
 
   #kudamono{
-    height: 2900px;
+    height: 2700px;
   }
   .container{
     display:flex;
